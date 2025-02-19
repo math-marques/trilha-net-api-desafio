@@ -3,32 +3,32 @@ using TrilhaApiDesafio.Context;
 using TrilhaApiDesafio.Models;
 using System.Linq;
 
-namespace TrilhaApiDesafio.Controllers
-{
+namespace TrilhaApiDesafio.Controllers;
+//definindo a rota da API, criação da classe mediadora e herdando da controllerbase
     [ApiController]
     [Route("[controller]")]
     public class TarefaController : ControllerBase
     {
         private readonly OrganizadorContext _context;
-
+//inserindo no contexto organizador
         public TarefaController(OrganizadorContext context)
         {
             _context = context;
         }
-
+//método utilizado para as requisições da api = GET
         [HttpGet("{id}")]
         public IActionResult ObterPorId(int id)
         {
-            // Buscar o Id no banco utilizando o EF
+            // Buscar o Id no banco utilizando o Entity Framework
             var tarefa = _context.Tarefas.Find(id);
 
-            // Validar o tipo de retorno
+            // Validando o tipo de retorno: se a tarefa for nula, o tratamento da excessão foi realizado.
             if (tarefa == null)
                 return NotFound(new { Erro = "Tarefa não encontrada" });
 
             return Ok(tarefa);
         }
-
+//posso requisitar buscando todas as tarefas
         [HttpGet("ObterTodos")]
         public IActionResult ObterTodos()
         {
@@ -113,4 +113,4 @@ namespace TrilhaApiDesafio.Controllers
             return NoContent();
         }
     }
-}
+
