@@ -18,6 +18,7 @@
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
+      //o legal dessa página é que no ASPNETCORE_ENVIRONMENT é possível apontar para os ambientes, a depender da situação, pra UATb, Produção, QA, e por aí vai... é um ponto que precisa ser modigicado pra debbugar fluxos e processos
     },
     "IIS Express": {
       "commandName": "IISExpress",
