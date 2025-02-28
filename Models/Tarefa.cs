@@ -3,8 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace TrilhaApiDesafio.Models
-{
+namespace TrilhaApiDesafio.Models;
+// classe tarefa com as propriedades informadas.
     public class Tarefa
     {
         public int Id { get; set; }
@@ -13,4 +13,3 @@ namespace TrilhaApiDesafio.Models
         public DateTime Data { get; set; }
         public EnumStatusTarefa Status { get; set; }
     }
-}
